@@ -56,6 +56,12 @@ async def scheduler():
             embed.add_field(name="👤 Type Beat",value=random.choice(types),inline=False)
             embed.add_field(name="🌑 Mood",value=random.choice(moods),inline=True)
             embed.add_field(name="⚡ Challenge",value=random.choice(rules),inline=False)
+
+            embed.add_field(
+    name="📤 Share Your Result",
+    value="Post your beat in **#🎧・beats**\n🏷️ Use **#DailyChallenge** in your post.",
+    inline=False
+)
             embed.set_footer(text=cfg["footer"])
             await ch.send(embed=embed)
             sent_date=today

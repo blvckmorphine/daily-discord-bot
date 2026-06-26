@@ -3,7 +3,6 @@ Only stock plugins
 One melody
 Reverse sample
 No clap
-No kick
 One 808
 No EQ
 Maximum 10 mixer tracks
@@ -12,3 +11,10 @@ Only FLEX
 No automation
 Only free plugins
 Make it in 30 minutes
+Use a vocal sample.
+Use a piano.
+Only one synth.
+Only one drum kit.
+Reverse one sound.
+Add a beat switch.
+Use only one melody.

@@ -1,11 +1,13 @@
 import discord
 from discord.ext import tasks
-import random, json
+import random, json, os
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
 with open("config.json","r",encoding="utf-8") as f:
     cfg=json.load(f)
+
+cfg["token"] = os.getenv("BOT_TOKEN")
 
 def load(name):
     with open(f"data/{name}.txt","r",encoding="utf-8") as f:

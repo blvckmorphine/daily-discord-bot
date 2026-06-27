@@ -44,7 +44,12 @@ async def scheduler():
     global sent_date
     now=datetime.now(ZoneInfo(cfg["timezone"]))
     today=now.date()
-    if now.hour==cfg["post_hour"] and now.minute==cfg["post_minute"] and sent_date!=today:
+    print(f"Checking: {now}")
+    if (
+    (now.hour > cfg["post_hour"] or
+     (now.hour == cfg["post_hour"] and now.minute >= cfg["post_minute"]))
+    and sent_date != today
+):
         ch=client.get_channel(int(cfg["channel_id"]))
         if ch:
             embed=discord.Embed(
@@ -64,7 +69,8 @@ async def scheduler():
 )
             embed.set_footer(text=cfg["footer"])
             await ch.send(embed=embed)
-            sent_date=today
+            print("Challenge sent!")
+            sent_date = today
 
 @client.event
 async def on_ready():
